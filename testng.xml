@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RDMF Testing" verbose="1" >
+  <test name="RDMF City Search Test" >
+    <classes>
+-	<class name="RDMFZipLookup"/>
+<!--	
+<class name="RDMFTownLookup"/>
+	<class name="RDMFPropertyLookup"/>
+	<class name="RDMFMgmtLookup"/>
+-->
+    </classes>
+ </test>
+</suite>
