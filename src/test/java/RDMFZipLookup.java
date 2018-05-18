@@ -52,9 +52,9 @@ public class RDMFZipLookup {
     pause();
     // ERROR: Caught exception [ERROR: Unsupported command [addLocationStrategy | id=zz |  856]]
     driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("Del Coronado")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("View Income Limits")).click();
   }
   
@@ -71,13 +71,13 @@ public class RDMFZipLookup {
     action.perform();
     driver.findElement(By.id("M1")).clear();
     driver.findElement(By.id("M1")).sendKeys("Bosley");
-    pause();
+    //pause();
     driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("Las Vegas Apts")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("View Income Limits")).click();
-    pause();
+    //pause();
   }
  
    @Test
@@ -92,13 +92,13 @@ public class RDMFZipLookup {
                              new Select(driver.findElement(By.id("stl"))).selectByVisibleText("Arizona");
                                  driver.findElement(By.id("tn")).clear();
                                      driver.findElement(By.id("tn")).sendKeys("O");
-                                         pause();
+                                         //pause();
                                              driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
-                                                 pause();
+                                                 //pause();
                                                      driver.findElement(By.linkText("Oracle Apartments")).click();
-                                                         pause();
+                                                         //pause();
                                                              driver.findElement(By.linkText("View Income Limits")).click();
-                                                                 pause();
+                                                                // pause();
                                                                    }
                                                                    
  
@@ -113,13 +113,13 @@ public class RDMFZipLookup {
     action.perform();
     driver.findElement(By.id("P1")).clear();
     driver.findElement(By.id("P1")).sendKeys("Orac");
-    pause();
+    //pause();
     driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("Oracle Apartments")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("View Income Limits")).click();
-    pause();
+    //pause();
   }
   
     @Test
@@ -137,13 +137,13 @@ public class RDMFZipLookup {
     new Select(driver.findElement(By.id("stl"))).selectByValue("AZ");
     driver.findElement(By.id("tn")).clear();
     driver.findElement(By.id("tn")).sendKeys("Orac");
-    pause();
+    //pause();
     driver.findElement(By.cssSelector("input[type=\"button\"]")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("Oracle Apartments")).click();
-    pause();
+    //pause();
     driver.findElement(By.linkText("View Income Limits")).click();
-    pause();
+    //pause();
   }
 
 
