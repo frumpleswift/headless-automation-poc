@@ -6,12 +6,14 @@ import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class RDMFZipLookup {
 
-  private WebDriver driver;
+  private HtmlUnitDriver driver;
   private Actions action;
   private Actions pause;
   private String baseUrl;
@@ -29,7 +31,8 @@ public class RDMFZipLookup {
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
 
-    driver = new FirefoxDriver();
+    driver = new HtmlUnitDriver();
+    driver.setJavascriptEnabled(true);
     action = new Actions(driver);
     pause  = new Actions(driver);
     baseUrl = "https://rdmfhrentals.sc.egov.usda.gov";
@@ -99,14 +102,17 @@ public class RDMFZipLookup {
   
     @Test
   public void testRDMFTownLookup() throws Exception {
-    driver.get(baseUrl + "/RDMFHRentals/select_state.jsp");
+    driver.get(baseUrl + "/RDMFHRentals/mfh_state_text?srch=Y");
     //driver.findElement(By.id("img8")).click();
-     WebElement anchor = driver.findElement(By.id("img8"));
-    action.moveToElement(anchor);
-    action.pause(2000);
-    action.click(anchor);
-    action.perform();
-    new Select(driver.findElement(By.id("stl"))).selectByVisibleText("Arizona");
+    // WebElement anchor = driver.findElement(By.id("img8"));
+    //action.moveToElement(anchor);
+    //action.pause(2000);
+    //action.click(anchor);
+    //action.perform();
+    WebDriverWait wait = new WebDriverWait(driver,10);
+    wait.until(ExpectedConditions.elementToBeClickable(By.id("stl")));
+    //select.selectByValue("AZ");
+    new Select(driver.findElement(By.id("stl"))).selectByValue("AZ");
     driver.findElement(By.id("tn")).clear();
     driver.findElement(By.id("tn")).sendKeys("Orac");
     pause();
